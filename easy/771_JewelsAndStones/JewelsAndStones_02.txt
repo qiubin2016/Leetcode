@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int numJewelsInStones(string J, string S) {
+        int count = 0;
+        int pos = 0;
+        int curr_pos;
+
+        for (int i = 0; i < J.size(); i++, pos = 0)
+        {
+            while(string::npos != (curr_pos = S.find(J[i], pos)))
+            {
+                count++;
+                pos = curr_pos + 1; 
+            }
+        }
+
+        return count;
+    }
+};
